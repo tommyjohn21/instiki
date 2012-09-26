@@ -1,5 +1,13 @@
 source "http://rubygems.org"
-gem "sqlite3", :require => "sqlite3"
+
+group :production, :staging do
+  gem "pg"
+end
+
+group :development, :test do
+  gem "sqlite3", :require => "sqlite3"
+end
+
 gem "itextomml", ">=1.4.10"
 gem "rack", ">=1.1.0"
 gem "mongrel", ">=1.2.0.pre2"
