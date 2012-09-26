@@ -1,7 +1,7 @@
 class ModifyTextTypes < ActiveRecord::Migration
   def self.up
     unless adapter_name.eql?('PostgreSQL')
-      change_column :revisions, :content, :text, :limit => 16777215
+      change_column :revisions, :content, :text
     end
     change_column :pages, :name, :string, :limit => 255
     change_column :webs, :additional_style, :text
